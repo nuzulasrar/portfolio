@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": [
+        "C:\\Users\\foot_\\AppData\\Local\\Temp\\claude\\C--Users-foot--OneDrive-Documents-GitHub-portfolio\\4ffaf7bf-2f78-441c-8113-f9ac71fc330e\\scratchpad\\serve.js",
+        "C:\\Users\\foot_\\OneDrive\\Documents\\GitHub\\portfolio",
+        "5500"
+      ],
+      "port": 5500
+    }
+  ]
+}

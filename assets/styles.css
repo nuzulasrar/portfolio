@@ -13,6 +13,8 @@
   --accent-soft: var(--l-accent-soft); --on-accent: var(--l-on-accent);
   --ok: #15803d;
   --shadow: 0 1px 2px rgba(20, 20, 30, .06), 0 8px 24px rgba(20, 20, 30, .08);
+  --shadow-shot: 0 1px 3px rgba(20, 20, 30, .08), 0 8px 18px -6px rgba(20, 20, 30, .22);
+  --shadow-shot-lift: 0 2px 6px rgba(20, 20, 30, .10), 0 14px 26px -8px rgba(20, 20, 30, .30);
   --radius: 18px;
   --max: 1160px;
   --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
@@ -27,6 +29,8 @@
     --accent-soft: var(--d-accent-soft); --on-accent: var(--d-on-accent);
     --ok: #4ade80;
     --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px rgba(0, 0, 0, .35);
+    --shadow-shot: 0 1px 3px rgba(0, 0, 0, .5), 0 8px 18px -6px rgba(0, 0, 0, .7);
+    --shadow-shot-lift: 0 2px 6px rgba(0, 0, 0, .55), 0 14px 26px -8px rgba(0, 0, 0, .8);
     color-scheme: dark;
   }
 }
@@ -37,6 +41,8 @@
   --accent-soft: var(--d-accent-soft); --on-accent: var(--d-on-accent);
   --ok: #4ade80;
   --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px rgba(0, 0, 0, .35);
+  --shadow-shot: 0 1px 3px rgba(0, 0, 0, .5), 0 8px 18px -6px rgba(0, 0, 0, .7);
+  --shadow-shot-lift: 0 2px 6px rgba(0, 0, 0, .55), 0 14px 26px -8px rgba(0, 0, 0, .8);
   color-scheme: dark;
 }
 
@@ -74,8 +80,8 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; lett
 .brand { font-family: var(--font-display); font-weight: 700; font-size: 20px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
 .brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; font-size: 15px; }
 .nav-links { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--muted); padding: 8px 12px; border-radius: 10px; transition: color .15s, background .15s; }
-.nav-links a:hover { color: var(--text); background: var(--surface-2); }
+.nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--accent-ink); padding: 8px 12px; border-radius: 10px; transition: color .15s, background .15s; }
+.nav-links a:hover { color: var(--accent-ink); background: var(--accent-soft); }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
 .icon-btn {
   width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line);
@@ -106,7 +112,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; lett
 .btn svg { width: 18px; height: 18px; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
-.tags li { font-size: 12.5px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); }
+.tags li { font-size: 12.5px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent); }
 
 /* ---------- Hero ---------- */
 .hero { padding: 72px 0 56px; }
@@ -120,7 +126,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; lett
 .hero .lede strong { color: var(--text); font-weight: 600; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; max-width: 520px; }
-.stat { padding: 14px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.stat { padding: 14px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .stat b { display: block; font-family: var(--font-display); font-size: 28px; line-height: 1.1; }
 .stat span { font-size: 13px; color: var(--muted); }
 
@@ -128,7 +134,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; lett
 .portrait::before {
   content: ""; position: absolute; inset: 28px -18px -18px 28px; border-radius: 28px; background: var(--accent);
 }
-.portrait img { position: relative; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 20%; border-radius: 28px; box-shadow: var(--shadow); }
+.portrait img { position: relative; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 20%; border-radius: 28px; box-shadow: var(--shadow); background: var(--accent); }
 .portrait .badge {
   position: absolute; left: -16px; bottom: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
   padding: 10px 14px; box-shadow: var(--shadow); font-size: 13px; line-height: 1.35;
@@ -138,13 +144,14 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; lett
 @media (max-width: 900px) {
   .hero { padding: 40px 0 32px; }
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .portrait { order: -1; width: min(260px, 70%); }
+  .portrait { order: -1; width: min(260px, 70%); margin-bottom: 28px; }
+  /* Sit the badge on the photo's bottom edge so it no longer covers the face */
+  .portrait .badge { left: 50%; bottom: -40px; transform: translateX(-50%); white-space: nowrap; text-align: center; }
 }
 @media (max-width: 480px) {
   .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
   .stat { padding: 12px; }
   .stat b { font-size: 22px; }
-  .portrait .badge { left: -6px; }
 }
 
 /* ---------- Clients strip ---------- */
@@ -181,7 +188,8 @@ section.block.alt { background: var(--surface-2); }
 .project-link:hover { text-decoration: underline; }
 
 .shots {
-  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding: 4px 4px 16px; margin: 0 -4px;
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: 16px;
+  padding: 6px 16px 28px; margin: 0 -16px -12px;
   scrollbar-width: thin; scrollbar-color: var(--line) transparent; overscroll-behavior-x: contain;
 }
 .shots::-webkit-scrollbar { height: 8px; }
@@ -191,14 +199,15 @@ section.block.alt { background: var(--surface-2); }
 }
 .shot img {
   height: 440px; width: auto; border-radius: 18px; border: 1px solid var(--line); background: var(--surface-2);
-  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: var(--shadow-shot); transition: transform .2s ease, box-shadow .2s ease;
 }
-.shot:hover img, .shot:focus-visible img { transform: translateY(-3px); box-shadow: var(--shadow); }
+.shot:hover img, .shot:focus-visible img { transform: translateY(-3px); box-shadow: var(--shadow-shot-lift); }
 .shot:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .shots.tablet .shot img { height: 400px; }
 .shots.wide .shot img { height: 300px; }
 @media (max-width: 600px) {
   .project { padding: 20px; border-radius: 20px; }
+  .project-head { grid-template-columns: 1fr; }
   .shot img { height: 360px; }
   .shots.tablet .shot img { height: 300px; }
   .shots.wide .shot img { height: 200px; }
@@ -267,7 +276,7 @@ section.block.alt { background: var(--surface-2); }
 .card-grid.two { grid-template-columns: repeat(2, 1fr); }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
 .card .shot { border-radius: 0; width: 100%; }
-.card .shot img { width: 100%; height: 220px; object-fit: cover; border-radius: 0; border: 0; border-bottom: 1px solid var(--line); }
+.card .shot img { width: 100%; height: 220px; object-fit: cover; border-radius: 0; border: 0; border-bottom: 1px solid var(--line); box-shadow: none; }
 .card.contain .shot img { object-fit: contain; background: var(--surface-2); padding: 12px; }
 .card .shot:hover img { transform: none; box-shadow: none; filter: brightness(1.04); }
 .card-body { padding: 20px 22px 24px; }
@@ -281,8 +290,7 @@ section.block.alt { background: var(--surface-2); }
 .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .edu { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px; }
 .edu .year { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--accent-ink); }
-.edu h3 { font-size: 21px; margin: 6px 0 4px; }
-.edu .school { color: var(--text); font-weight: 500; margin: 0 0 12px; }
+.edu h3 { font-size: 21px; margin: 6px 0 12px; }
 .edu ul { margin: 0; padding-left: 18px; color: var(--muted); }
 .edu li::marker { color: var(--accent); }
 @media (max-width: 760px) { .edu-grid { grid-template-columns: 1fr; } }

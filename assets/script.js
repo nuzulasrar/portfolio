@@ -1,4 +1,4 @@
-// Theme toggle (remembers the visitor's choice when storage is available)
+// Theme toggle: starts light (set on <html>) and remembers the visitor's choice when storage is available
 (function () {
   const root = document.documentElement;
   const btn = document.getElementById("theme-toggle");
@@ -8,9 +8,7 @@
   } catch (e) {}
 
   btn.addEventListener("click", () => {
-    const current = root.dataset.theme ||
-      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    const next = current === "dark" ? "light" : "dark";
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = next;
     try { localStorage.setItem("theme", next); } catch (e) {}
   });
