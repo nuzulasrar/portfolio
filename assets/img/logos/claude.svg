@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 8 252 84" width="252" height="84">
+  <g transform="translate(48 50)" stroke="#d97757" stroke-width="8" stroke-linecap="round">
+    <line x1="0" y1="0" x2="0" y2="-38"/>
+    <line x1="0" y1="0" x2="16" y2="-29"/>
+    <line x1="0" y1="0" x2="30" y2="-22"/>
+    <line x1="0" y1="0" x2="34" y2="-4"/>
+    <line x1="0" y1="0" x2="33" y2="14"/>
+    <line x1="0" y1="0" x2="22" y2="30"/>
+    <line x1="0" y1="0" x2="4" y2="37"/>
+    <line x1="0" y1="0" x2="-15" y2="31"/>
+    <line x1="0" y1="0" x2="-31" y2="20"/>
+    <line x1="0" y1="0" x2="-36" y2="2"/>
+    <line x1="0" y1="0" x2="-29" y2="-18"/>
+    <line x1="0" y1="0" x2="-18" y2="-33"/>
+  </g>
+  <text x="100" y="67" font-family="Georgia, 'Times New Roman', serif" font-size="50" fill="#1f1e1d" letter-spacing="-0.5">Claude</text>
+</svg>

@@ -259,6 +259,7 @@ section.block.alt { background: var(--tint-alt); }
 .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 12px; margin-bottom: 40px; }
 .logo {
   background: #fff; border: 1px solid var(--line); border-radius: 16px; height: 96px; display: grid; place-items: center; padding: 16px;
+  box-shadow: var(--shadow);
 }
 .logo img { max-height: 56px; max-width: 100%; width: auto; object-fit: contain; }
 .skill-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
