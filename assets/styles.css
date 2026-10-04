@@ -195,10 +195,11 @@ section.block.alt { background: var(--tint-alt); }
 .shots {
   display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: 16px;
   padding: 6px 16px 28px; margin: 0 -16px -12px;
-  scrollbar-width: thin; scrollbar-color: var(--line) transparent; overscroll-behavior-x: contain;
+  scrollbar-width: thin; scrollbar-color: #c4b5fd var(--accent-soft); overscroll-behavior-x: contain;
 }
 .shots::-webkit-scrollbar { height: 8px; }
-.shots::-webkit-scrollbar-thumb { background: var(--line); border-radius: 8px; }
+.shots::-webkit-scrollbar-track { background: var(--accent-soft); border-radius: 8px; }
+.shots::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 8px; }
 .shot {
   flex: 0 0 auto; scroll-snap-align: start; border: 0; padding: 0; background: none; cursor: zoom-in; border-radius: 18px;
 }
