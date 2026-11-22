@@ -352,3 +352,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   * { transition: none !important; }
 }
 
+
+/* ---------- Background picture ---------- */
+.hero, section.block, .contact {
+  background-image: url(img/bg/mesh.svg); background-size: cover; background-repeat: no-repeat; background-position: center;
+}
